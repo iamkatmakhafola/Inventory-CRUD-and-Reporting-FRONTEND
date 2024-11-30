@@ -1,0 +1,24 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <button mat-icon-button (click)="toggleSidenav()">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <h1>INF354 Assignment 3</h1>
+  </mat-toolbar-row>
+</mat-toolbar>
+
+<mat-sidenav-container>
+  <mat-sidenav #sidenav mode="over" class="side-container" [opened]="isLoggedIn">
+      <mat-nav-list>
+          <a mat-list-item [routerLink]="'/product-listing'"> Product Listing </a>
+          <a mat-list-item [routerLink]="'/add-product'"> Add Product </a>
+          <a mat-list-item [routerLink]="'/reporting'"> Reporting </a>
+          <a mat-list-item (click)="logout()"> Logout </a>
+      </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content class="content-container">
+      <div style="height: 88vh;">
+          <router-outlet></router-outlet>
+      </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>

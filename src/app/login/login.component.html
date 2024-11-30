@@ -1,0 +1,29 @@
+<div class="login-wrapper" fxLayout="row" fxLayoutAlign="center center">
+  <mat-card class="box" *ngIf="!isLoading">
+    <mat-card-header>
+      <mat-card-title>Log in</mat-card-title>
+    </mat-card-header>
+    <form class="form" [formGroup]="loginFormGroup" (ngSubmit)="LoginUser()">
+      <mat-card-content>
+        <mat-form-field class="full-width">
+          <mat-label>Email Address</mat-label>
+          <input matInput placeholder="e.g., user@example.com" formControlName="email">
+          <mat-error *ngIf="loginFormGroup.controls['email'].hasError('required')">Email is required</mat-error>
+          <mat-error *ngIf="loginFormGroup.controls['email'].hasError('email')">Enter a valid email</mat-error>
+        </mat-form-field>
+        <mat-form-field class="full-width">
+          <mat-label>Password</mat-label>
+          <input type="password" matInput placeholder="e.g., 8-16 characters" formControlName="password">
+          <mat-error *ngIf="loginFormGroup.controls['password'].hasError('required')">Password is required</mat-error>
+          <mat-error *ngIf="loginFormGroup.controls['password'].hasError('minlength')">Minimum 8 characters required</mat-error>
+          <mat-error *ngIf="loginFormGroup.controls['password'].hasError('maxlength')">Maximum 16 characters allowed</mat-error>
+        </mat-form-field>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-stroked-button color="primary" class="btn-block" type="submit">Log in</button>
+      </mat-card-actions>
+      <div style="text-align: center;">Don't have an account? <a [routerLink]="['../register']">Register</a></div>
+    </form>
+  </mat-card>
+  <mat-progress-spinner mode="indeterminate" *ngIf="isLoading"></mat-progress-spinner>
+</div>
