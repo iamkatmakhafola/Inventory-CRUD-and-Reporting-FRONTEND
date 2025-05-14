@@ -1,27 +1,33 @@
-# HW03App
+# Inventory Management Dashboard 📈🛍️  
+**Angular admin interface for product inventory with data visualization**
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.1.
+🔹 **Description**:  
+Feature-rich admin portal for managing inventory products, featuring secure authentication, dynamic data tables, and interactive charts. Built with Angular Material for a professional UI experience.
 
-## Development server
+🔹 **Key Features**:  
+- **Auth Flow**: JWT-powered login/registration  
+- **Smart Product Tables**:  
+  - Sortable columns (name, price, brand, etc.)  
+  - Filter-as-you-type search  
+  - Pagination (3/5/10 items per page)  
+- **Data Visualization**:  
+  - Brand/Type distribution charts  
+  - Accordion-style active products report  
+- **Form Management**:  
+  - Product creation with image upload  
+  - Reactive forms with validation  
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+🔹 **Tech Stack**:  
+- **Framework**: Angular 15+  
+- **UI Library**: Angular Material + CDK  
+- **State Management**: RxJS + NgRx (optional)  
+- **Charting**: Chart.js/NGX-Charts  
+- **Routing**: Angular Router with auth guards  
 
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+🔹 **Core Modules**:  
+| Module | Components | Services |  
+|--------|------------|----------|  
+| `Auth` | Login, Register | AuthService |  
+| `Products` | Listing, Add | ProductService |  
+| `Reports` | Charts, Accordion | ReportService |  
+| `Shared` | Sidebar, Loader | LocalStorage |  
